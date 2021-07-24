@@ -224,7 +224,6 @@ layout.tpl
 
 index.tpl
 ```html
-
 <h1>Blog posts</h1>
 
 <ul>

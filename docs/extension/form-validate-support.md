@@ -61,219 +61,43 @@ func (this *AddController) Post() {
 }		
 ```
 ## 表单类型
+
 以下列表列出来了对应的form元素信息：
-<table cellpadding="0" cellspacing="1" border="0" style="width:100%" class="tableborder">
-<tbody><tr>
-<th>名称</th>
-<th>参数</th>
-<th>功能描述</th>
-</tr>
 
-<tr>
-<td class="td"><strong>text</strong></td>
-<td class="td">No</td>
-<td class="td">textbox输入框</td>
-</tr>
-
-<tr>
-<td class="td"><strong>button</strong></td>
-<td class="td">No</td>
-<td class="td">按钮</td>
-</tr>
-
-<tr>
-<td class="td"><strong>checkbox</strong></td>
-<td class="td">No</td>
-<td class="td">多选择框</td>
-</tr>
-
-<tr>
-<td class="td"><strong>dropdown</strong></td>
-<td class="td">No</td>
-<td class="td">下拉选择框</td>
-</tr>
-
-<tr>
-<td class="td"><strong>file</strong></td>
-<td class="td">No</td>
-<td class="td">文件上传</td>
-</tr>
-
-<tr>
-<td class="td"><strong>hidden</strong></td>
-<td class="td">No</td>
-<td class="td">隐藏元素</td>
-</tr>
-
-<tr>
-<td class="td"><strong>password</strong></td>
-<td class="td">No</td>
-<td class="td">密码输入框</td>
-</tr>
-
-<tr>
-<td class="td"><strong>radio</strong></td>
-<td class="td">No</td>
-<td class="td">单选框</td>
-</tr>
-
-<tr>
-<td class="td"><strong>textarea</strong></td>
-<td class="td">No</td>
-<td class="td">文本输入框</td>
-</tr>
-
-</tbody></table>
-
-
+| 名称 | 参数 | 功能描述 |
+| - | - | - |
+| **text** | No | textbox输入框 |
+| **button** | No | 按钮 |
+| **checkbox** | No | 多选择框 |
+| **dropdown** | No | 下拉选择框 |
+| **file** | No | 文件上传 |
+| **hidden** | No | 隐藏元素 |
+| **password** | No | 密码输入框 |
+| **radio** | No | 单选框 |
+| **textarea** | No | 文本输入框 |
 ## 表单验证		
+
 以下列表将列出可被使用的原生规则
-<table cellpadding="0" cellspacing="1" border="0" style="width:100%" class="tableborder">
-<tbody><tr>
-<th>规则</th>
-<th>参数</th>
-<th>描述</th>
-<th>举例</th>
-</tr>
 
-<tr>
-<td class="td"><strong>required</strong></td>
-<td class="td">No</td>
-<td class="td">如果元素为空，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>matches</strong></td>
-<td class="td">Yes</td>
-<td class="td">如果表单元素的值与参数中对应的表单字段的值不相等，则返回FALSE</td>
-<td class="td">matches[form_item]</td>
-</tr>
-
-  <tr>
-    <td class="td"><strong>is_unique</strong></td>
-    <td class="td">Yes</td>
-    <td class="td">如果表单元素的值与指定数据表栏位有重复，则返回False（译者注：比如is_unique[User.Email]，那么验证类会去查找User表中Email栏位有没有与表单元素一样的值，如存重复，则返回false，这样开发者就不必另写Callback验证代码。）</td>
-    <td class="td">is_unique[table.field]</td>
-  </tr>
-
-<tr>
-<td class="td"><strong>min_length</strong></td>
-<td class="td">Yes</td>
-<td class="td">如果表单元素值的字符长度少于参数中定义的数字，则返回FALSE</td>
-<td class="td">min_length[6]</td>
-</tr>
-
-<tr>
-<td class="td"><strong>max_length</strong></td>
-<td class="td">Yes</td>
-<td class="td">如果表单元素值的字符长度大于参数中定义的数字，则返回FALSE</td>
-<td class="td">max_length[12]</td>
-</tr>
-
-<tr>
-<td class="td"><strong>exact_length</strong></td>
-<td class="td">Yes</td>
-<td class="td">如果表单元素值的字符长度与参数中定义的数字不符，则返回FALSE</td>
-<td class="td">exact_length[8]</td>
-</tr>
-
-  <tr>
-    <td class="td"><strong>greater_than</strong></td>
-    <td class="td">Yes</td>
-    <td class="td">如果表单元素值是非数字类型，或小于参数定义的值，则返回FALSE</td>
-    <td class="td">greater_than[8]</td>
-  </tr>
-
-  <tr>
-    <td class="td"><strong>less_than</strong></td>
-    <td class="td">Yes</td>
-    <td class="td">如果表单元素值是非数字类型，或大于参数定义的值，则返回FALSE</td>
-    <td class="td">less_than[8]</td>
-  </tr>
-
-<tr>
-<td class="td"><strong>alpha</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中包含除字母以外的其他字符，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>alpha_numeric</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中包含除字母和数字以外的其他字符，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>alpha_dash</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中包含除字母/数字/下划线/破折号以外的其他字符，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>numeric</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中包含除数字以外的字符，则返回 FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>integer</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素中包含除整数以外的字符，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-  <tr>
-    <td class="td"><strong>decimal</strong></td>
-    <td class="td">Yes</td>
-    <td class="td">如果表单元素中输入（非小数）不完整的值，则返回FALSE</td>
-    <td class="td">&nbsp;</td>
-  </tr>
-
-<tr>
-<td class="td"><strong>is_natural</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中包含了非自然数的其他数值 （其他数值不包括零），则返回FALSE。自然数形如：0,1,2,3....等等。</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>is_natural_no_zero</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值包含了非自然数的其他数值 （其他数值包括零），则返回FALSE。非零的自然数：1,2,3.....等等。</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>valid_email</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值包含不合法的email地址，则返回FALSE</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>valid_emails</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素值中任何一个值包含不合法的email地址（地址之间用英文逗号分割），则返回FALSE。</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>valid_ip</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素的值不是一个合法的IP地址，则返回FALSE。</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-<tr>
-<td class="td"><strong>valid_base64</strong></td>
-<td class="td">No</td>
-<td class="td">如果表单元素的值包含除了base64 编码字符之外的其他字符，则返回FALSE。</td>
-<td class="td">&nbsp;</td>
-</tr>
-
-</tbody></table>
+| 规则 | 参数 | 描述 | 举例 |
+| - | - | - | - |
+| **required** | No | 如果元素为空，则返回FALSE | &nbsp; |
+| **matches** | Yes | 如果表单元素的值与参数中对应的表单字段的值不相等，则返回FALSE | matches[form_item] |
+| **is_unique** | Yes | 如果表单元素的值与指定数据表栏位有重复，则返回False（译者注：比如is_unique[User.Email]，那么验证类会去查找User表中Email栏位有没有与表单元素一样的值，如存重复，则返回false，这样开发者就不必另写Callback验证代码。） | is_unique[table.field] |
+| **min_length** | Yes | 如果表单元素值的字符长度少于参数中定义的数字，则返回FALSE | min_length[6] |
+| **max_length** | Yes | 如果表单元素值的字符长度大于参数中定义的数字，则返回FALSE | max_length[12] |
+| **exact_length** | Yes | 如果表单元素值的字符长度与参数中定义的数字不符，则返回FALSE | exact_length[8] |
+| **greater_than** | Yes | 如果表单元素值是非数字类型，或小于参数定义的值，则返回FALSE | greater_than[8] |
+| **less_than** | Yes | 如果表单元素值是非数字类型，或大于参数定义的值，则返回FALSE | less_than[8] |
+| **alpha** | No | 如果表单元素值中包含除字母以外的其他字符，则返回FALSE | &nbsp; |
+| **alpha_numeric** | No | 如果表单元素值中包含除字母和数字以外的其他字符，则返回FALSE | &nbsp; |
+| **alpha_dash** | No | 如果表单元素值中包含除字母/数字/下划线/破折号以外的其他字符，则返回FALSE | &nbsp; |
+| **numeric** | No | 如果表单元素值中包含除数字以外的字符，则返回 FALSE | &nbsp; |
+| **integer** | No | 如果表单元素中包含除整数以外的字符，则返回FALSE | &nbsp; |
+| **decimal** | Yes | 如果表单元素中输入（非小数）不完整的值，则返回FALSE | &nbsp; |
+| **is_natural** | No | 如果表单元素值中包含了非自然数的其他数值 （其他数值不包括零），则返回FALSE。自然数形如：0,1,2,3....等等。 | &nbsp; |
+| **is_natural_no_zero** | No | 如果表单元素值包含了非自然数的其他数值 （其他数值包括零），则返回FALSE。非零的自然数：1,2,3.....等等。 | &nbsp; |
+| **valid_email** | No | 如果表单元素值包含不合法的email地址，则返回FALSE | &nbsp; |
+| **valid_emails** | No | 如果表单元素值中任何一个值包含不合法的email地址（地址之间用英文逗号分割），则返回FALSE。 | &nbsp; |
+| **valid_ip** | No | 如果表单元素的值不是一个合法的IP地址，则返回FALSE。 | &nbsp; |
+| **valid_base64** | No | 如果表单元素的值包含除了base64 编码字符之外的其他字符，则返回FALSE。 | &nbsp; |

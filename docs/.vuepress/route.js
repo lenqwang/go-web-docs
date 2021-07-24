@@ -1,14 +1,8 @@
 module.exports = [
   {
-    text: '教程',
-    children: [
-      { text: '教程', link: '/' }
-    ]
-  },
-  {
     text: 'Go环境配置',
     children: [
-      { text: 'Go环境配置', link: '/setup/go-env' },
+      { text: 'Go环境配置', link: '/setup/' },
       { text: '安装Go', link: '/setup/startup' },
       { text: 'GOPATH 与工作空间', link: '/setup/workspace' },
       { text: 'Go 命令', link: '/setup/command' },

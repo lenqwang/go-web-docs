@@ -194,7 +194,7 @@ func main() {
 
 我们看到`Marshal`函数接收的参数v是interface{}类型的，即它可以接受任意类型的参数，那么xml包，根据什么规则来生成相应的XML文件呢？
 
-- 如果v是 array或者slice，那么输出每一个元素，类似<type>value</type>
+- 如果v是 array或者slice，那么输出每一个元素，类似`<type>value</type>`
 - 如果v是指针，那么会Marshal指针指向的内容，如果指针为空，什么都不输出
 - 如果v是interface，那么就处理interface所包含的数据
 - 如果v是其他数据类型，就会输出这个数据类型所拥有的字段信息

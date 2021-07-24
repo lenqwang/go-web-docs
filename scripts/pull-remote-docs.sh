@@ -6,7 +6,7 @@ pull() {
     filename="${filenames[$i]}"
     url="https://raw.githubusercontent.com/astaxie/build-web-application-with-golang/master/zh/$filename.md"
     echo $url
-    curl -L $url > backups/$filename.md
+    curl -L $url > /backups/$filename.md
   done
 }
 
